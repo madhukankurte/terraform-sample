@@ -21,7 +21,7 @@ permissions:
 jobs:
   terraform-fmt-validate:
     name: Terraform Format and Validate
-    uses: madhukankurte/Workflows/workflows/terraform/terraform-fmt-validate.yml@main
+    uses: madhukankurte/Workflows/.github/workflows/terraform-fmt-validate.yaml@main
     with:
       terraform-version: "1.12.2"
       working-directory: "terraform"
