@@ -1,0 +1,27 @@
+name: Terraform CI
+
+on:
+  pull_request:
+    branches:
+      - main
+    paths:
+      - "terraform/**"
+      - ".github/workflows/terraform-ci.yml"
+  push:
+    branches:
+      - main
+    paths:
+      - "terraform/**"
+      - ".github/workflows/terraform-ci.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  terraform-fmt-validate:
+    name: Terraform Format and Validate
+    uses: madhukankurte/Workflows/workflows/terraform/terraform-fmt-validate.yml@main
+    with:
+      terraform-version: "1.12.2"
+      working-directory: "terraform"
